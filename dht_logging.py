@@ -39,7 +39,7 @@ try:
                 f.write(f'{timestamp}, {temp:.1f}, {humid:.1f}\n')
 
             # Wait the full 5 seconds ONLY after a successful read
-            time.sleep(5)
+            time.sleep(1)
 
         else:
           
