@@ -39,17 +39,14 @@ try:
                 f.write(f'{timestamp}, {temp:.1f}, {humid:.1f}\n')
 
             # Wait the full 5 seconds ONLY after a successful read
-            time.sleep(1)
+            time.sleep(5)
 
         else:
-          
+            # FAILURE: Don't wait 5 seconds.
             # Try again in 0.1s to get a valid reading ASAP.
             time.sleep(0.1)
 
 except KeyboardInterrupt:
     print("\nLogging stopped by user. Cleaning up GPIO...")
     GPIO.cleanup()
-
-   # Wait 1 seconds before taking the next sensor reading
-   time.sleep(1)
 
